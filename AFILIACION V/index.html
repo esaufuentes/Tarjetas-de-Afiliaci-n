@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Formulario Afiliacion Voluntaria</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	<script src="jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div class="contenedor">
+
+		<!-- Tarjeta -->
+		<section class="tarjeta" id="tarjeta">
+			<div class="delantera">
+				<div class="logo-marca" id="logo-marca">
+					<!-- <img src="img/logos/visa.png" alt=""> -->
+				</div>
+				<!--   <img src="img/chip-tarjeta.png" class="chip" alt=""> -->
+				<div class="datos">
+					<div class="grupo" id="nombre">
+                        <p class="nombre">Esau Fuengtes Diego</p>	
+						
+					</div>
+
+					<div class="flexbox">
+						<div class="grupo" id="numero">
+							<p class="numero">#### #### #### ####</p>
+						</div>
+
+						<div class="grupo" id="estadoc">
+							<p class="estadoc">SOLTERO</p>
+
+						</div>
+						<div class="grupo" id="tel">
+							<p class="tel">## #### ####</p>
+
+						</div>
+
+						<div class="grupo" id="dir">
+							<p class="dir">REGION SIN NUMERO NUMERO 13 MZ 18</p>
+
+						</div>
+						<div class="grupo" id="nacionalidad">
+							<p class="nacionalidad">MEXICANA</p>
+
+						</div>
+						<div class="grupo" id="ocupacion">
+							<p class="ocupacion">ESTUDIANTE</p>
+
+						</div>
+					
+						<div class="grupo" id="gradoe">
+							<p class="gradoe">LIC. EN GASTRONIMIA</p>
+
+						</div>
+
+						<div class="grupo" id="edad">
+							<p class="edad">Edad</p>
+
+						</div>
+
+
+						<div class="grupo" id="expiracion">
+							<p class="label">Expiracion</p>
+							<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+						</div>
+						
+						
+						
+
+
+
+					</div>
+				</div>
+			</div>
+
+			<div class="trasera">
+
+				<div class="datos">
+
+
+				</div>
+				<p class="leyenda"> ----------------------------------------------------------------------------------------------------</p>
+			</div>
+
+	</section>
+
+	<!-- Contenedor Boton Abrir Formulario -->
+				<div class="contenedor-btn">
+					<button class="btn-abrir-formulario" id="btn-abrir-formulario">
+						<i class="fas fa-plus"></i>
+					</button>
+				</div>
+
+				<!-- Formulario -->
+				<form method="post" action="pacage/guardar.php" id="formulario-tarjeta" class="formulario-tarjeta" enctype="multipart/form-data">
+					<div class="grupo">
+						<label for="inputNumero">NSS</label>
+						<input type="text" id="inputNumero" name="numero" maxlength="19" autocomplete="off" required>
+					</div>
+					<div class="grupo">
+						<label for="inputNombre">Nombre</label>
+						<input type="text" id="inputNombre" maxlength="45" name="nombre" autocomplete="off"required>
+					</div>
+					<div class="grupo">
+						<label for="inputEstadoc">Estado Civil</label>
+						<input type="text" id="inputEstadoc" name="estado" maxlength="19" autocomplete="off" required>
+					</div>
+					<div class="grupo">
+						<label for="inputTel">Telefono</label>
+						<input type="text" id="inputTel" maxlength="12" name="telefono" autocomplete="off" required>
+					</div>
+					<div class="grupo">
+						<label for="inputDir">Dirección</label>
+						<input type="text" id="inputDir" maxlength="200" name="direccion" autocomplete="off" required>
+					</div>
+
+					<div class="grupo">
+						<label for="inputNacionalidad">Nacionalidad</label>
+						<input type="text" id="inputNacionalidad" maxlength="19" name="nacionalidad" autocomplete="off" required>
+					</div>
+
+					<div class="grupo">
+						<label for="inputOcupacion">Ocupación</label>
+						<input type="text" id="inputOcupacion" maxlength="19" name="ocupacion" autocomplete="off" required>
+					</div>
+					
+
+					<div class="grupo">
+						<label for="inputGradoe">GRADO DE ESTUDOS </label>
+						<input type="text" id="inputGradoe" maxlength="50" name="gradoe" autocomplete="off" required>
+					</div>
+					<h4 class="text-center">Seleccione una Foto</h4>
+										<div class="form-group">
+										  <label class="col-sm-2 control-label">Archivos</label>
+										  <div class="col-sm-8">
+											<input type="file" id="foto" name="foto" />
+											<br />
+        <output id="list"></output>
+										  </div>
+
+
+										  
+        
+
+					<div class="flexbox">
+						<div class="grupo expira">
+
+							
+								<label for="inputEdad">EDAD</label>
+								<div class="flexbox">
+									<div class="grupo-select">
+										<select name="inputEdad" id="selectEdad" required>
+											<option disabled selected >Edad</option>
+										</select>
+										<i class="fas fa-angle-down"></i>
+									</div>
+								</div>
+
+							<label for="selectMes">Expiracion</label>
+							<div class="flexbox">
+								<div class="grupo-select">
+									<select name="mes" id="selectMes" required>
+										<option disabled selected>Mes</option>
+									</select>
+									<i class="fas fa-angle-down"></i>
+								</div>
+
+								<div class="grupo-select">
+									<select name="year" id="selectYear" required>
+										<option disabled selected>Año</option>
+									</select>
+									<i class="fas fa-angle-down"></i>
+									
+										
+										  
+										</div>
+									
+								</div>
+			
+							</div>
+						</div>
+				
+						
+					</div>
+					<br>
+						<br>
+						<span class="d-block pb-2">Firma digital aqui</span>
+                    <div class="signature mb-2" style="width: 100%; height: 200px;">
+                        <canvas id="signature-canvas"
+                            style="border: 1px dashed red; width: 100%; height: 200px;"></canvas>
+                    </div>
+					<br>
+					<br>
+					<button type="submit" value="guadardatos" class="btn-enviar">Generar PDF</button>
+				</form>
+			</div>
+
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		function archivo(evt) {
+			var foto = evt.target.files; // FileList object
+	   
+			// Obtenemos la imagen del campo "file".
+			for (var i = 0, f; f = foto[i]; i++) {
+			  //Solo admitimos imágenes.
+			  if (!f.type.match('image.*')) {
+				  continue;
+			  }
+	   
+			  var reader = new FileReader();
+	   
+			  reader.onload = (function(theFile) {
+				  return function(e) {
+					// Insertamos la imagen
+				   document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+				  };
+			  })(f);
+	   
+			  reader.readAsDataURL(f);
+			}
+		}
+	   
+		document.getElementById('foto').addEventListener('change', archivo, false);
+</script>
+</body>
+</html>
